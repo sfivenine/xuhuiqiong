@@ -10,14 +10,14 @@
         body {
             margin: 0;
             padding: 0;
-            background-image: url('IMG_3325.jpg'); /* 替换为你的图片路径 */
+            background-image: url('IMG_3325.JPG'); /* 替换为你的图片路径 */
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
             height: 100vh;
             width: 100vw;
             position: relative;
-            font-family: Arial, sans-serif;
+            font-family: Calibri, sans-serif;
         }
 
         .clock-container {
@@ -25,16 +25,17 @@
             flex-direction: row;
             align-items: center;
             position: absolute;
-            top: 10vh; /* 调整此值以更改时钟的位置 */
+            top: 9.8vh; /* 调整此值以更改时钟的位置 */
             left: 50vw;
             transform: translate(-50%, 0);
         }
 
         .clock, .date {
-            color: red;
-            font-weight: bold;
-            margin: 0 10px;
-            font-size: 2.5vw; /* 使用视口宽度单位，以便在不同屏幕上比例一致 */
+            color:rgb(232, 22, 22);
+            font-weight: 900;
+            margin: 0 3px;
+            font-size: 100px; /* 使用视口宽度单位，以便在不同屏幕上比例一致 */
+            font-family: '黑体', Courier, monospace; /* 设置字体 */
         }
 
         .blink-text {
@@ -42,8 +43,8 @@
             font-size: 1.5vw; /* 使用视口宽度单位，以便在不同屏幕上比例一致 */
             animation: blink 1s infinite; /* 添加闪烁动画 */
             position: absolute;
-            bottom: 5vh; /* 距离底部5%视口高度 */
-            right: 5vw; /* 距离右侧5%视口宽度 */
+            bottom: 61.8vh; /* 距离底部5%视口高度 */
+            right: 0.8vw; /* 距离右侧5%视口宽度 */
         }
 
         @keyframes blink {
@@ -61,11 +62,12 @@
         /* Media query for very small screens */
         @media (max-width: 600px) {
             .clock-container {
-                top: 15vh; /* 调整此值以更改小屏幕上的时钟位置 */
+                top: 13vh; /* 调整此值以更改小屏幕上的时钟位置 */
             }
 
             .clock, .date {
-                font-size: 4vw; /* 使用较大的字体大小，以便在小屏幕上仍然清晰 */
+                font-size: 6.2vw; /* 使用较大的字体大小，以便在小屏幕上仍然清晰 */
+                font-weight: 900;
             }
 
             .blink-text {
@@ -85,7 +87,7 @@
         function updateTime() {
             const now = new Date();
             const year = now.getFullYear();
-            const month = (now.getMonth() + 1).toString().padStart(2, '0');
+            const month = (now.getMonth() + 1).toString();
             const day = now.getDate().toString().padStart(2, '0');
             const hours = now.getHours().toString().padStart(2, '0');
             const minutes = now.getMinutes().toString().padStart(2, '0');
